@@ -3,6 +3,8 @@ import { withAuth } from './middlewares/with-auth';
 import { withChannelId } from './middlewares/with-channel-id';
 import { withIntl } from './middlewares/with-intl';
 import { withMakeswift } from './middlewares/with-makeswift';
+//import { withReferrerId } from './middlewares/with-referrer-id';
+import { withPriceMax } from './middlewares/with-price-max';
 import { withRoutes } from './middlewares/with-routes';
 
 export const middleware = composeMiddlewares(
@@ -10,6 +12,8 @@ export const middleware = composeMiddlewares(
   withMakeswift,
   withIntl,
   withChannelId,
+  //withReferrerId,
+  withPriceMax,
   withRoutes,
 );
 
@@ -27,6 +31,6 @@ export const config = {
      * - xmlsitemap.php (legacy sitemap route)
      * - robots.txt (robots route)
      */
-    '/((?!api|admin|_next/static|_next/image|_vercel|favicon.ico|xmlsitemap.php|sitemap.xml|robots.txt|login/token).*)',
+    '/((?!api|admin|_next/static|_next/image|_vercel|favicon.ico|xmlsitemap.php|sitemap.xml|robots.txt|login/token|badges|swatches|no-image.svg).*)',
   ],
 };
